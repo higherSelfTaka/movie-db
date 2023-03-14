@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "site": "bb-video",
+
+    "public": "public",
+    ...
+  }
+}
+
+firebase deploy --only hosting:bb-video
