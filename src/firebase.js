@@ -1,9 +1,25 @@
+//import firebase from 'firebase'
+import { initializeApp, getApp, getApps } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import {getAuth} from 'firebase/auth'
+
 const firebaseConfig = {
-    apiKey: "AIzaSyD1TCpV9FrUHbr2IGdAbtznaXQpuCwkUL0",
-    authDomain: "bb-crowdfunding.firebaseapp.com",
-    projectId: "bb-crowdfunding",
-    storageBucket: "bb-crowdfunding.appspot.com",
-    messagingSenderId: "747814198859",
-    appId: "1:747814198859:web:f29245bf32aee66dbe77ce",
-    measurementId: "G-RHD1DSBBKD"
-  };
+  
+};
+
+// const firebaseApp = firebase.initialize(firebaseConfig)
+// const db = firebaseApp.firestore();
+// const auth = firebase.auth();
+
+// export {auth}
+// export default db;
+
+  // Initialize Firebase
+  const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+  const auth =getAuth();
+  const db = getFirestore();
+  const storage = getStorage();
+  
+  export default app;
+  export { db, storage, auth };
